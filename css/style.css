@@ -13,6 +13,8 @@
 }
 
 body {
+  font-family: 'Roboto Slab', serif;
+  /* font-size: 18px; */
   color: white;
   background-color: lightsteelblue;
 }
@@ -24,55 +26,95 @@ section {
   justify-content: center;
 }
 
+h2 {
+  padding: 10px 20px 5px 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+p {
+  padding: 5px 20px 20px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 /*----------------
     CAROUSEL
 ----------------*/
 
 .carousel {
-  height: calc(648/920 * 100vh);
+  height: calc(70vh);
   display: flex;
 }
 
-.carousel img {
-  width: 100%;
-  object-fit: cover;
-}
-
-/* IMAGES */
+/* ------ IMAGES ------- */
 
 .carousel-image {
   height: 100%; 
-  width: calc(1152/1920 * 100vw);
+  width: calc(16/9 * 70vh);
+  background-color: black;
 }
 
 .carousel-image .item {
   height: 100%;
-
+  width: 100%;  
+  position: relative;
 }
 
-/* THUMBNAILS */
+/* Immagini */
+
+.carousel-image .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Testo */
+
+.carousel-image .item .text {
+  /* position */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* inner */
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: end;
+  overflow-x: scroll;
+}
+
+
+/* ------ SCROLL ------- */
 
 .carousel-scroll  {
-  position: relative;
+  width: calc(6/9 * 70vh);
   height: 100%;
-  width: calc(396/1920 * 100vw);
+  position: relative;
   background-color: black;
-  overflow-y: auto;
 }
+
+/* Thumbs */
 
 .carousel-thumb {
   height: 100%;
+  width: 100%;
 }
 
 .carousel-thumb .mini-item { 
   display: block;
   height: calc(100% * 1/6);
+  width: 100%;
   opacity: 0.2;
   border: 1px solid white;
 }
 
-
-/* ARROWS */
+/* Arrows */
 
 .carousel-button .arrow-btn {
   /* position */
