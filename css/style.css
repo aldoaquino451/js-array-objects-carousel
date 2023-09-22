@@ -1,0 +1,118 @@
+/*----------------
+    GENERAL
+----------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --button-size: 30px;
+}
+
+body {
+  color: white;
+  background-color: lightsteelblue;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*----------------
+    CAROUSEL
+----------------*/
+
+.carousel {
+  height: calc(648/920 * 100vh);
+  display: flex;
+}
+
+.carousel img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* IMAGES */
+
+.carousel-image {
+  height: 100%; 
+  width: calc(1152/1920 * 100vw);
+}
+
+.carousel-image .item {
+  height: 100%;
+
+}
+
+/* THUMBNAILS */
+
+.carousel-scroll  {
+  position: relative;
+  height: 100%;
+  width: calc(396/1920 * 100vw);
+  background-color: black;
+  overflow-y: auto;
+}
+
+.carousel-thumb {
+  height: 100%;
+}
+
+.carousel-thumb .mini-item { 
+  display: block;
+  height: calc(100% * 1/6);
+  opacity: 0.2;
+  border: 1px solid white;
+}
+
+
+/* ARROWS */
+
+.carousel-button .arrow-btn {
+  /* position */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* outer  */
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* inner */
+  font-size: 15px;
+  line-height: var(--button-size);
+  text-align: center;
+  cursor: pointer;
+}
+
+.carousel-button .arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+.carousel-button .arrow-btn.up {
+  top: 10px;
+}
+
+.carousel-button .arrow-btn.down {
+  bottom: 10px;
+}
+
+/*----------------
+    UTILITIES
+----------------*/
+
+.hide {
+  display: none;
+}
+
+.active {
+  height: calc(100% * 2/6) !important;
+  opacity: 1 !important; 
+}
