@@ -13,6 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- bootstrap  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css" integrity="sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A==" crossorigin="anonymous"/>
 
   <!-- css files  -->
   <link rel="stylesheet" href="./css/style.css">
@@ -25,39 +28,67 @@
 
 <body>
   
-  <section>
-    <div class="carousel">
+  <section class="d-flex align-items-center justify-content-center ">
+    <div id="carousel-container" class="d-flex">
 
-      <div class="carousel-image">
+      <div id="images" class="position-relative ">
         
-        <!--
-        <div class="item hide"">
+        <div id="images-container" class="position-absolute ">
+          <!--  -->
+          <!-- <div class="item position-relative w-100 h-100">
+            
+            <img class="hidden h-100 w-100 object-fit-cover" src="./img/zelda.jpg" alt="cyberpunk">
 
-          <img src="./img/cyberpunk.jpg" alt="cyberpunk">
+            <div id="quote" class="position-absolute d-flex flex-column justify-content-end text-end w-100 m-0 ">
+              <h2 class="text-uppercase fw-bold m-0 ">ciao</h2>
+              <p class="m-0 ">caio</p>
+            </div>
 
-          <div class="text">
-            <h2>Cyberpunk 2077</h2>
-            <p>Cyberpunk 2077 è un videogioco sparatutto in prima persona di genere action RPG e open world, sviluppato da CD Projekt RED e pubblicato da CD Projekt </p>
+          </div> -->
+          <!--  -->
+        </div>
+
+        <div id="slider-buttons" class="position-absolute d-flex justify-content-center">
+
+          <div class="slider-fast-btn up d-flex justify-content-center align-items-center rounded-pill">
+            <i class="fa-solid fa-forward-fast fa-rotate-180"></i>
           </div>
           
-        </div>
-        -->
+          <div class="slider-btn up d-flex justify-content-center align-items-center rounded-pill">
+            <i class="fa-solid fa-forward-step fa-rotate-180"></i>
+          </div>
+
+          <div class="stop-btn d-flex justify-content-center align-items-center rounded-pill">
+            <i class="fa-solid fa-stop"></i>
+          </div>
+
+          <div class="slider-btn down d-flex justify-content-center align-items-center rounded-pill">
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+        
+          <div class="slider-fast-btn down d-flex justify-content-center align-items-center rounded-pill">
+            <i class="fa-solid fa-forward-fast"></i>
+          </div>
+
+        </div>  
 
       </div>
       
-      <div class="carousel-scroll">
+      <div id="thumbnails" class="position-relative h-100 ">
         
-        <div class="carousel-thumb">
-          <!-- inserisci thumbs tramite js  -->
+        <div id="thumbnails-container" class="w-100 h-100 ">
+          <!--  -->
+            <img class="mini-item w-100 " src="./img/zelda.jpg" alt="01">
+          <!--  -->
         </div>
         
-        <div class="carousel-button">
+        <div id="switch-buttons" class="position-absolute h-100 d-flex flex-column justify-content-between ">
 
-          <div class="arrow-btn up">
+          <div class="arrow-btn up d-flex justify-content-center align-items-center  mt-3 rounded-pill ">
             <i class="fa-solid fa-arrow-up"></i>
           </div>
 
-          <div class="arrow-btn down">
+          <div class="arrow-btn down d-flex justify-content-center align-items-center mb-3 rounded-pill  ">
             <i class="fa-solid fa-arrow-down"></i>
           </div>
 
