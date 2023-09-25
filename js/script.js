@@ -1,14 +1,5 @@
-/*
-  
-  1. Creo con template literale un unico container dove inserire tutti i tag come nell'html, e trammite ciclo forEach:
-    - prendo il valore della chiave immagine e lo inserisco nel source dell'immagine (con classe hide)
-    - il valore di testo e titolo lo inserisco all'interno del div text (con classe hide)
 
-  2. il primo div container di default sarà visibile
-
-  3. al click il container corrente che contiene immgine e testo non sarù visibile e renderemo visibile quello succ/prec
-
-*/
+"use strict";
 
 /* ------- OGGETTI -------- */
 
@@ -30,14 +21,14 @@ const images = [
   }, 
   {
     image: './img/last-of-us.jpg',
-    title: "The Last of Us Parte II",
+    title: 'The Last of Us Parte II',
     text: 'E\' un videogioco di avventura dinamica, a sfondo post-apocalittico, sviluppato dalla casa di produzione Naughty Dog in esclusiva per PlayStation 4. È il sequel di The Last of Us e si svolge cinque anni dopo quest\'ultimo.',
   },
   {
     image: './img/portal.jpg',
     title: 'Portal 2',
     text: 'Portal 2 è un videogioco rompicapo, pubblicato nel 2011 da Valve Corporation per varie piattaforme.',
-  }
+  },
 ];
 
 
@@ -50,8 +41,10 @@ const thumbsContainer = document.getElementById('thumbnails-container');
 const btnUp = document.querySelector('#switch-buttons .arrow-btn.up');
 const btnDown = document.querySelector('#switch-buttons .arrow-btn.down');
 const btnStop = document.querySelector('#slider-buttons .stop-btn');
-const btnPrev = document.querySelector('#slider-buttons .slider-btn.up');
-const btnNext = document.querySelector('#slider-buttons .slider-btn.down');
+const btnPrev = document.querySelector('#slider-buttons .slider-fast-btn.left');
+const btnNext = document.querySelector('#slider-buttons .slider-fast-btn.right');
+const delay = 2500;
+const delayFast = 1000;
 
 let counter;
 let intervalID;
@@ -63,23 +56,23 @@ counter = 0;
 
 /* ------- IMAGES & THUMBS -------- */
 
-images.forEach(copertina => {
+images.forEach( image => {
 
   imagesContainer.innerHTML += `
   <div class="hidden_a item position-relative w-100 h-100">
  
-    <img class=" h-100 w-100 object-fit-contain" src="${copertina.image}" alt="cyberpunk">
+    <img class=" h-100 w-100 object-fit-contain" src="${image.image}" alt="cyberpunk">
 
     <div id="quote" class="position-absolute d-flex flex-column justify-content-end text-end w-100 m-0 ">
-      <h2 class="text-uppercase fw-bold m-0 ">${copertina.title}</h2>
-      <p class="m-0 ">${copertina.text}</p>
+      <h2 class="text-uppercase fw-bold m-0 ">${image.title}</h2>
+      <p class="m-0 ">${image.text}</p>
     </div>
 
   </div>
   `;
 
   thumbsContainer.innerHTML += `
-  <img class="mini-item w-100 object-fit-cover" src="${copertina.image}" alt="01">
+  <img class="mini-item w-100 object-fit-cover" src="${image.image}" alt="01">
   `;
 
 });
@@ -93,9 +86,9 @@ reset();
 
 btnUp.addEventListener('click', slideUp);
 btnDown.addEventListener('click', slideDown);
-btnStop.addEventListener('click', stopSlider)
-btnPrev.addEventListener('click', fastSlideUp)
-btnNext.addEventListener('click', fastSlideDown)
+btnPrev.addEventListener('click', fastSlideUp);
+btnNext.addEventListener('click', fastSlideDown);
+btnStop.addEventListener('click', stopSlider);
 
 
 for ( let i = 0; i < counterMax; i++ ) {
@@ -109,29 +102,29 @@ for ( let i = 0; i < counterMax; i++ ) {
 /* slide */
 function stopSlider() {
   clearTimeout(intervalID);
-  reset();
+  // reset();
 }
 
 function slideUp() {
   clearTimeout(intervalID);
   buttonUp();
-  intervalID = setInterval(buttonUp, 2000);
+  intervalID = setInterval(buttonUp, delay);
 }
 
 function slideDown() {
   clearTimeout(intervalID);  
   buttonDown();
-  intervalID = setInterval(buttonDown, 2000);
+  intervalID = setInterval(buttonDown, delay);
 }
 
 function fastSlideUp() {
   clearTimeout(intervalID);  
-  intervalID = setInterval(buttonUp, 500);
+  intervalID = setInterval(buttonUp, delayFast);
 }
 
 function fastSlideDown() {
   clearTimeout(intervalID);  
-  intervalID = setInterval(buttonDown, 500);
+  intervalID = setInterval(buttonDown, delayFast);
 }
 
 /* click */

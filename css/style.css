@@ -37,7 +37,7 @@ p {
 
 #carousel-container {
   height: calc(70vh);
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 
@@ -52,9 +52,6 @@ p {
 }
 
 /* ------ IMAGES - CONTAINER ------- */
-  /* #images .item {
-    padding: 20px;
-  } */
 
 #quote {
   top: 0; 
@@ -105,7 +102,8 @@ p {
 
 
 #thumbnails {
-  width: calc(70vh * 5/9);
+  height: 100%; 
+  width: calc(5/9 * 70vh);
   background-color: #000000;
 }
 
